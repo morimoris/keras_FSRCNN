@@ -14,7 +14,7 @@ class MyPReLU(Layer): #PReLUを独自に作成
                 alpha_constraint = None,
                 shared_axes = None,
                 **kwargs):
-        super(MyPrelu, self).__init__(**kwargs)
+        super(MyPReLU, self).__init__(**kwargs)
 
         self.alpha_initializer = initializers.get('zeros')
         self.alpha_regularizer = regularizers.get(None)
@@ -43,7 +43,7 @@ class MyPReLU(Layer): #PReLUを独自に作成
             'alpha_regularizer': regularizers.serialize(self.alpha_regularizer),
             'alpha_constraint': constraints.serialize(self.alpha_constraint),
             }
-        base_config = super(MyPrelu, self).get_config()
+        base_config = super(MyPReLU, self).get_config()
         return dict(list(base_config.items()) + list(config.items()))
 
 def FSRCNN(d, s, m, mag): 
