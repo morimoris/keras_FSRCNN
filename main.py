@@ -119,7 +119,7 @@ if __name__ == "__main__":
         path = "FSRCNN_model.h5"
 
         if os.path.exists(path):
-            model = tf.keras.models.load_model(path, custom_objects={'psnr':psnr, "MyPrelu":model.MyPrelu()})
+            model = tf.keras.models.load_model(path, custom_objects={'psnr':psnr, "MyPReLU":model.MyPrelu()})
             pred = model.predict(test_x, batch_size = 1)
 
             ps_pred_ave = 0
